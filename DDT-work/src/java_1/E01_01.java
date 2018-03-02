@@ -11,11 +11,11 @@ package java_1;
 public class E01_01 {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
 
 
-
+		//「初めてのJavaプログラム。」と表示する。
 		System.out.println("初めてのJavaプログラム。");
+		//「画面に出力しています。」と表示する。※；がないためエラーになる
 		System.out.println("画面に出力しています。")
 
 		/*
