@@ -16,20 +16,44 @@ public class E03_12 {
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.print("整数１＞");
-		//int型の変数num1を入力
-		int num1 = scanner.nextInt();
+		//int型の変数inputNum1を入力
+		int inputNum1 = scanner.nextInt();
 
 		System.out.print("整数２＞");
-		//int型の変数num2を入力
-		int num2 = scanner.nextInt();
+		//int型の変数inputNum2を入力
+		int inputNum2 = scanner.nextInt();
 
 		System.out.print("整数３＞");
-		//int型の変数num3を入力
-		int num3 = scanner.nextInt();
+		//int型の変数inputNum3を入力
+		int inputNum3 = scanner.nextInt();
+
+		int minNum = inputNum1; //整数１を一旦最小値とする
+
+		if (inputNum2 < minNum ){
+			//整数２が最小値より小さければ最小値を変数２へ更新
+			minNum = inputNum2;
+		}
+
+		if (inputNum3 < minNum ){
+			//整数３が最小値より小さければ最小値を変数３へ更新
+			minNum = inputNum3;
+		}
+
+		System.out.println("最小値は" + minNum + "です。");
 
 
-		//入力値の最小値を出力
-		System.out.println("最小値は" + ( num1 < num2 ? (num1 < num3 ? num1 : num3)  : (num2 < num3 ? num2 : num3)) + "です。");
+		/**
+		 * 訂正前コード
+		 *
+		 * //入力値の最小値を出力
+		 * System.out.println("最小値は" + ( inputNum1 < inputNum2 ? (inputNum1 < inputNum3 ? inputNum1 : inputNum3)  : (inputNum2 < inputNum3 ? inputNum2 : inputNum3)) + "です。");
+		 *
+		 *
+		 *
+		 */
+
+
+
 
 
 
