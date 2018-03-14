@@ -29,6 +29,58 @@ public class E03_13 {
 		// 中央値用の変数を宣言
 		int middleNum = 0;
 
+		// 入力値を配列に格納
+		int[] inputNums = { inputNum1, inputNum2, inputNum3 };
+
+		/**
+		 * 降順ソート
+		 */
+
+		// 配列の要素を順番にすべて調べるため、入力回数-1分ループ
+		for (int i = 0; i < inputNums.length - 1; i++) {
+
+			// ループ中の配列要素のとなりの要素と比較
+			for (int j = i + 1; j < inputNums.length; j++) {
+
+				if (inputNums[i] < inputNums[j]) {
+					// 隣の要素が確認中の要素より大きければ、作業用変数へ格納
+					int tmpNum = inputNums[j];
+
+					// 大きかった要素に確認中要素を格納
+					inputNums[j] = inputNums[i];
+
+					// 作業用変数に格納していた大きい要素を確認中要素の位置へ格納
+					inputNums[i] = tmpNum;
+				}
+
+			}
+		}
+
+		// 配列の要素数を判定
+		switch (inputNums.length % 2) {
+
+		case 0:
+			//要素数が偶数の場合、要素の中間の値を中央値とする
+			middleNum = inputNums[(inputNums.length / 2 ) -1];
+
+			break;
+
+		case 1:
+			//要素数が奇数の場合、要素の中間の値を中央値とする
+			middleNum = inputNums[(inputNums.length / 2 ) ];
+
+			break;
+
+		default:
+			break;
+		}
+
+		// 中央値を出力
+		System.out.println("中央値は" + middleNum + "です。");
+
+		/**
+		 * 【修正前コード２】
+
 		if (inputNum1 < inputNum2) {
 
 			if (inputNum2 < inputNum3) {
@@ -38,7 +90,7 @@ public class E03_13 {
 				// 変数２が変数１より大きく、変数３が変数２未満の場合変数３を中央値とする
 				middleNum = inputNum3;
 			} else {
-				//変数１を中央値とする
+				// 変数１を中央値とする
 				middleNum = inputNum1;
 			}
 
@@ -51,13 +103,14 @@ public class E03_13 {
 				// 変数２が変数１より小さく、変数３より大きい場合変数２を中央値とする
 				middleNum = inputNum2;
 			} else {
-				//変数１を中央値とする
+				// 変数１を中央値とする
 				middleNum = inputNum1;
 			}
 
 		}
-		//中央値を出力
-		System.out.println("中央値は" + middleNum + "です。");
+		*/
+
+
 
 		/**
 		 * 修正前コード
