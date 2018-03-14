@@ -1,12 +1,9 @@
 package java03;
 
-import java.util.Scanner;
-
 public class E03_17 {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
 
 		//０～２の乱数を生成
 		int jankenNum = (int) (Math.random() * 10 % 3);
