@@ -14,7 +14,7 @@ public class E04_01 {
 
 		Scanner scanner = new Scanner(System.in);
 
-		int retryFlg; //リトライフラグ
+		int retryNum; //リトライフラグ
 
 		do {
 
@@ -37,17 +37,17 @@ public class E04_01 {
 
 				System.out.println("もう一度処理を実行しますか？　1 … はい / 2 …　いいえ");
 				//リトライフラグを入力
-				retryFlg = scanner.nextInt();
+				retryNum = scanner.nextInt();
 
-				if (retryFlg != 1 && retryFlg != 2){
+				if (retryNum != 1 && retryNum != 2){
 					System.out.println("1か2の整数を入力してください。");
 				}
 				//1か2以外の整数が入力されたらループする
-			} while (retryFlg != 1 && retryFlg != 2);
+			} while (retryNum != 1 && retryNum != 2);
 
 
 			//1が入力されたらループ
-		} while (retryFlg == 1);
+		} while (retryNum == 1);
 
 
 
