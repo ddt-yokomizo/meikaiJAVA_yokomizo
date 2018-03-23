@@ -15,10 +15,8 @@ public class E04_05 {
 
 		/**
 		 * 【考察結果】
-		 * System.out.print(inputNum1--);
-		 * はinputNum1を出力してからデクリメントするのに対し、
-		 * System.out.print(--inputNum1);
-		 * はデクリメントしてからinputNum1を出力する。
+		 * 後置減分演算子の場合は減少前（デクリメント）の値が生成され、
+		 * 前置減分演算子の場合は減少後（デクリメント）の値が生成される。
 		 *
 		 * inputNum1--　の場合
 		 * 入力値が5だとしたら
