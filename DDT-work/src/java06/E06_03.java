@@ -22,7 +22,7 @@ public class E06_03 {
 				System.out.println((i + 1) + "番目の要素に『" + tmpNum + "』を格納します。");
 				//作業用変数を順番に配列に格納
 				inputList[i] = tmpNum;
-				//作業用変数をデクリメント
+				//作業用変数に増加数（1.1）を加算する。
 				tmpNum += gainNum;
 			}
 			
