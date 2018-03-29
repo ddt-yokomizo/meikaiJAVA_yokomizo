@@ -14,12 +14,14 @@ public class E04_17 {
 	public static void main(String[] args) {
 		//標準入力ストリーム
 		Scanner scanner = new Scanner(System.in);
+		//入力値１を宣言
+		int inputNum1 = 0;
+		//カウント用の変数を宣言
+		int tmpNum = 0;
 		
 		System.out.print("整数値＞");
 		//入力値１
-		int inputNum1 = scanner.nextInt();
-		//カウント用の変数
-		int tmpNum = 0;
+		inputNum1 = scanner.nextInt();
 		
 		//【処理概要】入力値の回数分ループし、約数をチェックして順番に表示する
 		for (int i = 0 ; i < inputNum1 ; i++){
