@@ -20,20 +20,28 @@ public class E04_15 {
 		Double coefficientNum = 0.9;
 		//標準体重を宣言
 		Double standardWeight = 0.0;
+		//開始値を宣言
+		int startHeight = 0;
+		//終了値を宣言
+		int endHeight = 0; 
+		// 増分を宣言
+		int increaseValue = 0;
+		//作業用変数
+		int tmpNum = 0;
 
 		System.out.print("何㎝から：");
 		// 開始値を入力
-		int startHeight = scanner.nextInt();
+		startHeight = scanner.nextInt();
 		//作業用の変数(初期値を開始値とする）
-		int tmpNum = startHeight;
+		tmpNum = startHeight;
 		
 		System.out.print("何㎝まで：");
 		// 終了値を入力
-		int endHeight = scanner.nextInt();
+		endHeight = scanner.nextInt();
 		
 		System.out.print("何㎝ごと：");
 		// 増分を入力
-		int increaseValue = scanner.nextInt();
+		increaseValue = scanner.nextInt();
 		
 		System.out.println("身長　・　標準体重");
 		
