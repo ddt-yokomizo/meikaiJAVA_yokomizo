@@ -16,10 +16,12 @@ public class E04_18 {
 		Scanner scanner = new Scanner(System.in);
 		//累乗数は2
 		int perfectPower = 2;
+		//入力値１を宣言
+		int inputNum1 = 0;
 		
 		System.out.print("整数値＞");
 		//入力値１
-		int inputNum1 = scanner.nextInt();
+		inputNum1 = scanner.nextInt();
 		
 		//【処理概要】入力値の回数分ループし読み込んだ値の２乗値を出力する
 		for (int i = 0 ; i < inputNum1 ; i++){
