@@ -16,10 +16,11 @@ public class E04_16 {
 		//標準入力ストリーム
 		Scanner scanner = new Scanner(System.in);
 		int timingNew = 5; //改行のタイミングを宣言
+		int inputNum1 = 0; //入力値１を宣言
 		
 		System.out.print("いくつ＊を出力しますか＞");
 		//入力値１
-		int inputNum1 = scanner.nextInt();
+		inputNum1 = scanner.nextInt();
 		
 		//【処理概要】入力回数分ループし、＊を表示する。
 		for(int i = 0 ; i < inputNum1 ; i++){
