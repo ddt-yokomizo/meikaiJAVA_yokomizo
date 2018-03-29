@@ -19,8 +19,6 @@ public class E04_19 {
 		String inputSeason = null;
 		// リトライ判定用変数
 		int retryNum = 0;
-		// エラーフラグ
-		boolean errFlg = false;
 		
 		try {
 			// 【処理概要】入力月に対応する季節を出力し、再度実行まで可能
@@ -32,15 +30,12 @@ public class E04_19 {
 					inputMonth = scanner.nextInt();
 
 					if (1 <= inputMonth && inputMonth <= 12) {
-						// エラーフラグをfalseに変更
-						errFlg = false;
+						//1~12の値が入力されたら処理を抜ける
 					} else {
 						// 1~12以外の値が入力されたらメッセージ出力
 						System.out.println("1~12の整数値を入力してください。");
-						// エラーフラグをtrueに変更
-						errFlg = true;
 					}
-				} while (errFlg);
+				} while (inputMonth < 1 || 12 < inputMonth);
 
 				switch (inputMonth) {
 				case 12:
@@ -81,15 +76,13 @@ public class E04_19 {
 					retryNum = scanner.nextInt();
 
 					if (retryNum == 1 || retryNum == 2) {
-						// エラーフラグをfalseに変更
-						errFlg = false;
+						//１か２が入力されたら処理を抜ける
+						break;
 					} else {
 						// 1か２以外の値が入力されたらメッセージ出力
 						System.out.println("1か2を入力してください。");
-						// エラーフラグをtrueに変更
-						errFlg = true;
 					}
-				} while (errFlg);
+				} while (retryNum != 1 || retryNum != 2);
 
 			} while (retryNum == 1);
 
