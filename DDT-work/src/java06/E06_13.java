@@ -78,9 +78,7 @@ public class E06_13 {
 				System.out.println(m);
 			}
 
-		} finally
-
-		{
+		} finally {
 			// scannerをクローズ
 			scanner.close();
 		}
