@@ -15,8 +15,6 @@ public class E06_18 {
 		int rowNum = 0;
 		// 行を宣言
 		int lineNum = 0;
-		// 要素（入力値）を宣言
-		int inputElement = 0;
 
 		// 標準入力ストリーム
 		Scanner scanner = new Scanner(System.in);
