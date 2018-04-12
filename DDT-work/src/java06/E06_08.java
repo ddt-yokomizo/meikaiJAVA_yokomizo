@@ -39,12 +39,13 @@ public class E06_08 {
 				inputList[i] = scanner.nextDouble();
 			}
 			// 配列の要素を全てチェックし、要素の平均値と合計値を計算する。
-			for (double i : inputList) {
+			for (double inputNum : inputList) {
 				//【拡張for文】要素の合計値を計算する。
-				sumNum += i;
-				//要素の平均値を計算する。
-				avrNum = sumNum / inputList.length;
+				sumNum += inputNum;
 			}
+			//要素の平均値を計算する。
+			avrNum = sumNum / inputList.length;
+			
 			// 合計値を出力する。
 			System.out.println("合計値："+ sumNum);
 			// 平均値を出力する。
