@@ -18,7 +18,7 @@ public class E06_04 {
 		// 要素数を宣言
 		int yousoNum = 0;
 		// 生成する乱数の個数
-		int randomRange = 10;
+		int randomNum = 10;
 
 		System.out.print("要素数を設定してください。＞");
 		// 要素数を設定
@@ -30,15 +30,15 @@ public class E06_04 {
 			// 要素に０〜９の乱数を格納するため、設定回数分ループ
 			for (int i = 0; i < inputList.length; i++) {
 				// 0~9の乱数を要素へ格納
-				inputList[i] = (int) (Math.random() * randomRange);
+				inputList[i] = (int) (Math.random() * randomNum);
 			}
 
 			// グラフの段の作成（乱数の上限値分ループ）
-			for (int j = 0; j < randomRange; j++) {
+			for (int j = 0; j < randomNum; j++) {
 				// 値の作成（配列の要素数分ループ）
 				for (int k = 0; k < inputList.length; k++) {
 					// 読み込み中の段数と要素を比較
-					if ((randomRange - j) <= inputList[k]) {
+					if ((randomNum - j) <= inputList[k]) {
 						// 要素の値が読み込み中の値に達していれば『＊」を出力
 						System.out.print("*");
 					} else {
@@ -50,7 +50,7 @@ public class E06_04 {
 				System.out.println("");
 
 				// 最終段が終了した時、ラインとインデックスを表示する
-				if (j == (randomRange - 1)) {
+				if (j == (randomNum - 1)) {
 					// 要素数分「ー」を出力
 					for (int l = 0; l < inputList.length; l++) {
 						System.out.print('-');
