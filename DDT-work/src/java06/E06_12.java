@@ -16,8 +16,8 @@ public class E06_12 {
 		int[] inputList;
 		// 要素数を宣言
 		int yousoNum = 0;
-		// 作業用の変数
-		int tmpNum = 0;
+		// 切り替え作業用の変数
+		int tradeNum = 0;
 		// 切り替え先インデックス
 		int switchElement = 0;
 
@@ -58,13 +58,13 @@ public class E06_12 {
 				switchElement = (int) (Math.random() * 10) % (inputList.length);
 				
 				//　入れ替え先の要素を作業用変数へ退避
-				tmpNum = inputList[switchElement];
+				tradeNum = inputList[switchElement];
 				
 				//入れ替え元の値を入れ替え先の要素へ代入する
 				inputList[switchElement] = inputList[k];
 				
 				//退避していた入れ替え先の要素を、入れ替え元の要素へ格納する。（シャッフル完了）
-				inputList[k] = tmpNum;
+				inputList[k] = tradeNum;
 			}
 			
 			System.out.println("シャッフル後の要素はこのような順番で格納されています。");
