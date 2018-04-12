@@ -35,9 +35,9 @@ public class E06_09 {
 				inputList[i] = (int) (Math.random() * RANDOM_RANGE) + 1;
 			}
 			//配列の全ての要素を出力する
-			for(int j : inputList){
+			for(int inputNum : inputList){
 				//配列の要素を順番に出力
-				System.out.println(j);
+				System.out.println(inputNum);
 			}
 		} finally {
 			// scannerをクローズ
