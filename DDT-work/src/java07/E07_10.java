@@ -13,8 +13,6 @@ import java.util.Scanner;
  * 
  */
 public class E07_10 {	
-	// 問題で利用する３桁の乱数を格納する配列（要素は３）
-	static int[] iRandomList = new int[3];
 	
 	// 標準入力ストリーム
 	static Scanner scanner = new Scanner(System.in);
@@ -46,22 +44,11 @@ public class E07_10 {
 		return isInputRetry;
 	}
 
-	// 問題に利用する演算子を決定して返却するメソッド( 0・・＋、 １・・ー）
-	static int operatorReturn() {
-
+	public static void main(String[] args) {
+		// 問題で利用する３桁の乱数を格納する配列（要素は３）
+		int[] iRandomList = new int[3];
 		// 演算子をランダムに決定するための変数
 		int iOperator = 0;
-
-		// 演算子を決定するための0か１の乱数を決定
-		iOperator = (int) (Math.random() * 10) % 2;
-
-		// 演算子をを決定するための変数を返却する
-		return iOperator;
-	}
-
-	public static void main(String[] args) {
-		
-
 		// 正解値
 		int iCorrectValues = 0;
 		// 問題文
@@ -85,16 +72,17 @@ public class E07_10 {
 					
 					//最終ループまではランダムに決定した演算子で計算する
 					if (1 <= i && i <= (iRandomList.length - 1)) {
-						// operatorReturnメソッドから呼び出した演算子で計算をする
-						if (operatorReturn() == 0) {
-							// 返却値が０なら「＋」で演算する
+						// 演算子を決定するための0か１の乱数を決定
+						iOperator = (int) (Math.random() * 10) % 2;
+						if (iOperator == 0) {
+							// ０なら「＋」で演算する
 							iCorrectValues += iRandomList[i];
 							//また、「＋」を問題文に結合する
 							sbQestion.append(" ＋ ");
 							// 問題文に作成したオペランドを結合
 							sbQestion.append(String.valueOf(iRandomList[i]));
-						} else if (operatorReturn() == 1) {
-							// 返却値が１なら「ー」で演算する
+						} else if (iOperator == 1) {
+							// １なら「ー」で演算する
 							iCorrectValues -= iRandomList[i];
 							//また、「ー」を問題文に結合する
 							sbQestion.append(" ー ");
@@ -102,7 +90,6 @@ public class E07_10 {
 							sbQestion.append(String.valueOf(iRandomList[i]));
 						}
 					}
-
 					if((i + 1) == iRandomList.length){
 						// オペランドの数までループが周回したら「 ＝ 」を結合する（問題文の完成）
 						sbQestion.append(" = ");
