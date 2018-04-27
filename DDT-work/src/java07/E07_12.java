@@ -25,8 +25,8 @@ public class E07_12 {
 		System.out.println("");
 	}
 	
-	// 引数の値のbit 構成を引数iRotate分右ビット回転して返却するメソッド
-	static StringBuilder rRotateBits(int iBits , int iRotate){
+	// 引数の値のbit構成を引数iRotate分右ビット回転して、整数値を返却するメソッド
+	static int rRotateBits(int iBits , int iRotate){
 		
 		//回転後のビット構成を格納する
 		StringBuilder sbBit = new StringBuilder();
@@ -54,13 +54,16 @@ public class E07_12 {
 			//順番に、抜き出した最下位ビットを最上位ビットへ置換する
 			sbBit.setCharAt(i, sbLeastBit.charAt(i));
 		}
-		System.out.println("右ビット回転後のビット構成を返却します");
-		//右ビット回転後のビット構成を返却
-		return sbBit;
+		System.out.println("右ビット回転後のビット構成を表示します。");
+		//右ビット回転後のビット構成を表示
+		System.out.println(sbBit);
+		
+		//ビット構成を整数値に変換したものを返却
+		return Integer.parseInt(sbBit.toString() , 2);
 	}
 	
-	// 引数の値のbit 構成を引数iRotate分左ビット回転して返却するメソッド
-	static StringBuilder lRotateBits(int iBits , int iRotate){
+	// 引数の値をiRotate分左ビット回転した値を返却するメソッド
+	static int lRotateBits(int iBits , int iRotate){
 		
 		//ビット（３２ビット）
 		final int I_BITS = 31;
@@ -90,9 +93,12 @@ public class E07_12 {
 			//順番に、抜き出した最上位ビットを最下位ビットへ置換する
 			sbBit.setCharAt(((sbBit.length() - 1) - (sbMostBit.length() - (i + 1))) , sbMostBit.charAt(i));
 		}
-		System.out.println("左ビット回転後のビット構成を返します");
-		//右ビット回転後のビット構成を返却
-		return sbBit;
+		System.out.println("左ビット回転後のビット構成を表示します。");
+		//右ビット回転後のビット構成を表示
+		System.out.println(sbBit);
+		
+		//ビット構成を整数値に変換したものを返却
+		return Integer.parseInt(sbBit.toString() , 2);
 	}
 
 	public static void main(String[] args) {
