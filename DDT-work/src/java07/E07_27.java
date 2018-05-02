@@ -276,7 +276,7 @@ public class E07_27 {
 			//配列の解放
 			listOf2dimentionZ = null;
 			System.out.println("要素数が一致しません");
-			//falseを返却
+			//要素数が一致しなかった場合falseを返却
 			return false;
 		} else {
 			System.out.println("配列Zに行列の値を加算しました。");
@@ -289,7 +289,7 @@ public class E07_27 {
 				//改行
 				System.out.println();
 			}
-			//falseを返却
+			//要素数が一致し加算した場合trueを返却
 			return true;
 		}
 	}
