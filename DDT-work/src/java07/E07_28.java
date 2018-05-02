@@ -218,8 +218,8 @@ public class E07_28 {
 		//配列の要素を表示
 		for(int i = 0 ; i < listOf2dimention.length ; i++){
 			for(int j = 0 ; j < listOf2dimention[i].length ; j++){
-				//要素を順番に出力
-				System.out.print(listOf2dimention[i][j]);
+				//要素を順番に出力(行の最後を除き、要素と要素の間にはカンマを入れる)
+				System.out.print(listOf2dimention[i][j] + (j == (listOf2dimention[i].length - 1) ? "" : ","));
 			}
 			//改行
 			System.out.println();
