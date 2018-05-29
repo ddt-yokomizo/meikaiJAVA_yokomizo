@@ -71,7 +71,7 @@ public class E10_02 {
 			
 			System.out.println("\n最後に作成した識別番号を取得します。");
 			//最後に作成した識別番号を取得
-			System.out.println(Id.getMaxId());
+			System.out.println(ExId.getMaxId());
 			
 		} finally {
 			// scannerをクローズ
