@@ -21,16 +21,18 @@ package java10;
 public class ExId {
 	
 	/* ====フィールド==== */
-	static int counter = 0; //何番までの識別番号を与えたか
-	private static int addedValue = 1; //識別番号加算値 (変更可能だが変更前は１)	
-	private int id; //識別番号
+	private static int sCounter = 0; //いくつ識別番号を作成したか
+	private static int sBeforeNum = 0; //何番までの識別番号を与えたか	
+	private static int sAddedValue = 1; //識別番号加算値 (変更可能だが変更前は１)	
+	private int mId; //識別番号
 	
 	/* ====コンストラクタ==== */
 	public ExId(){
 		//何番までの識別番号を与えたかをカウント
-		++counter;
+		++sCounter;
 		//インスタンス生成ごとに特定の識別番号を加算する。
-		id = addedValue * counter;
+		mId = sBeforeNum + sAddedValue;
+		sBeforeNum = mId;
 	}
 	
 	/* ====================================================================== */
@@ -48,7 +50,7 @@ public class ExId {
 	/* ====================================================================== */
 	public int getId(){
 		//識別番号を返却
-		return id;
+		return mId;
 	}
 	
 	/* ====================================================================== */
@@ -67,7 +69,7 @@ public class ExId {
 	/* ====================================================================== */
 	public static int getMaxId(){
 		//最後に与えた識別番号を返却
-		return counter;
+		return sBeforeNum;
 	}
 	
 	/* ====================================================================== */
@@ -85,6 +87,6 @@ public class ExId {
 	/* ====================================================================== */
 	public static void setAddedValue(int changeValue){
 		//加算値を更新
-		addedValue = changeValue;
+		sAddedValue = changeValue;
 	}
 }
