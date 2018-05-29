@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class E10_02 {
+	/* ====フィールド==== */
+	final static int sMORE = 1; //「〜以上」を表すクラス定数
+	
 	// 標準入力ストリーム
 	static Scanner scanner = new Scanner(System.in);
 	/* ====================================================================== */
@@ -20,7 +23,6 @@ public class E10_02 {
 	public static void main(String[] args){
 		try {
 
-			final int MORE = 1; //「〜以上」を表す定数
 			final int START_ONE = 1; //「１〜」の範囲を入力させたい時に利用する定数
 			final String INS_HOW_MANY = "連番インスタンスをいくつ生成しますか？＞"; //連番インスタンス改の生成数を指定する際に利用する定数
 			final String INS_CHANGE_NUM = "識別番号の加算値を入力＞"; //連番インスタンス改の生成時に加算する識別番号の飛び値を変更する際に出力する定数
@@ -34,7 +36,7 @@ public class E10_02 {
 			System.out.println("\n========１回目========");
 			
 			//連番インスタンス改をいくつ生成するかを決定（１以上の整数）
-			howMany = inputMoreOrLessCheck(START_ONE, MORE, INS_HOW_MANY);
+			howMany = inputMoreOrLessCheck(START_ONE, sMORE, INS_HOW_MANY);
 			
 			//指定数分連番インスタンス改を生成
 			for(int i = 0 ; i < howMany ; i++){
@@ -44,14 +46,14 @@ public class E10_02 {
 			
 			System.out.println("\nここで識別番号の加算値を変更します。");
 			//変更する識別番号の加算値を入力（１以上の整数）
-			changeNum = inputMoreOrLessCheck(START_ONE, MORE, INS_CHANGE_NUM);
+			changeNum = inputMoreOrLessCheck(START_ONE, sMORE, INS_CHANGE_NUM);
 			//識別番号の加算値を変更
 			ExId.setAddedValue(changeNum);
 			
 			System.out.println("\n========２回目========");
 			
 			//連番インスタンス改をいくつ生成するかを決定（１以上の整数）
-			howMany = inputMoreOrLessCheck(START_ONE, MORE, INS_HOW_MANY);
+			howMany = inputMoreOrLessCheck(START_ONE, sMORE, INS_HOW_MANY);
 			
 			//指定数分連番インスタンス改を生成
 			for(int i = 0 ; i < howMany ; i++){
