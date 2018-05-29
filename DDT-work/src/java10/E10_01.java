@@ -11,8 +11,11 @@ import java.util.Scanner;
 
 
 public class E10_01 {
+	/* ====フィールド==== */
+	final static int sMORE = 1; //「〜以上」を表すクラス定数
+	
 	// 標準入力ストリーム
-	static Scanner scanner = new Scanner(System.in);
+	static Scanner sScanner = new Scanner(System.in);
 	/* ====================================================================== */
 	/**
 	 * @brief メインメソッド
@@ -26,8 +29,6 @@ public class E10_01 {
 	/* ====================================================================== */
 	public static void main(String[] args) throws IOException {
 		try {
-
-			final int MORE = 1; //「〜以上」を表す定数
 			final int START_ONE = 1; //「１〜」の範囲を入力させたい時に利用する定数
 			final String INS_HOW_MANY = "連番インスタンスをいくつ生成しますか？＞"; //連番インスタンスの生成数を指定する際に利用する定数
 			int howMany = 0; //連番インスタンスをいくつ生成するかの変数
@@ -36,7 +37,7 @@ public class E10_01 {
 			ArrayList<Id> idList = new ArrayList<Id>();
 			
 			//連番インスタンスをいくつ生成するかを決定（１以上の整数）
-			howMany = inputMoreOrLessCheck(START_ONE, MORE, INS_HOW_MANY);
+			howMany = inputMoreOrLessCheck(START_ONE, sMORE, INS_HOW_MANY);
 			
 			//指定数分連番インスタンスを生成
 			for(int i = 0 ; i < howMany ; i++){
@@ -58,7 +59,7 @@ public class E10_01 {
 			
 		} finally {
 			// scannerをクローズ
-			scanner.close();
+			sScanner.close();
 		}
 	}
 
@@ -79,7 +80,7 @@ public class E10_01 {
 		// 引数の文字列をメッセージとして出力する
 		System.out.print(outputMsg);
 		// 試算する値を入力
-		inputNum = scanner.nextInt();
+		inputNum = sScanner.nextInt();
 
 		// 入力した整数値を返却する
 		return inputNum;
