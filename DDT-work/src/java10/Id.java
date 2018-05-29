@@ -20,13 +20,13 @@ package java10;
 public class Id {
 	
 	/* ====フィールド==== */
-	static int counter = 0; //何番までの識別番号を与えたか
-	private int id; //識別番号
+	private static int sCounter = 0; //何番までの識別番号を与えたか
+	private int mId; //識別番号
 
 	/* ====コンストラクタ==== */
 	public Id(){
 		//インスタンス生成ごとにカウンタを加算する。
-		id = ++counter;
+		mId = ++sCounter;
 	}
 	
 	/* ====================================================================== */
@@ -44,7 +44,7 @@ public class Id {
 	/* ====================================================================== */
 	public int getId(){
 		//識別番号を返却
-		return id;
+		return mId;
 	}
 	
 	/* ====================================================================== */
@@ -63,7 +63,7 @@ public class Id {
 	/* ====================================================================== */
 	public static int getMaxId(){
 		//最後に与えた識別番号を返却
-		return counter;
+		return sCounter;
 	}
 	
 }
