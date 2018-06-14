@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class E10_02 {
 	/* ====フィールド==== */
 	final static int sMORE = 1; //「〜以上」を表すクラス定数
+	final static int sLESS = 0; //「〜以下」を表すクラス定数
 	
 	// 標準入力ストリーム
 	static Scanner scanner = new Scanner(System.in);
@@ -129,7 +130,7 @@ public class E10_02 {
 		// 0 ・・・・ 以下 / 1 ・・・・ 以上
 
 		// 基準値"以下"の値を入力させる【moreOrLessの値が 0 の場合】
-		if (moreOrLess == 0) {
+		if (moreOrLess == sLESS) {
 			do {
 				// inputNumメソッドからチェックする値を入力（引数outputMsgの文字列を渡す）
 				checkedNum = inputNum(outputMsg);
@@ -141,7 +142,7 @@ public class E10_02 {
 			} while (referenceValue < checkedNum);
 
 			// 基準値"以上"の値を入力させる処理【moreOrLessの値が 1 の場合】
-		} else if (moreOrLess == 1) {
+		} else if (moreOrLess == sMORE) {
 			do {
 				// inputNumメソッドからチェックする値を入力（引数outputMsgの文字列を渡す）
 				checkedNum = inputNum(outputMsg);
