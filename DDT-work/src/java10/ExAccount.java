@@ -24,7 +24,7 @@ public class ExAccount {
 	
 	/* ====フィールド==== */
 	private String acName; // 口座名義
-	private int acNo = 000000; //口座番号(6桁）
+	private String acNo = "000000"; //口座番号(6桁）
 	private long acBalance = 0; //預金残高（初期値０）
 	private Day opeingDay; //口座開設日
 	private int typeOfAc = 0; //口座種別
@@ -38,7 +38,7 @@ public class ExAccount {
 	/* ====コンストラクタ==== */
 	
 	//開設と同時に預金を行わないコンストラクタ
-	ExAccount(String acName , int acNo , Day opeingDay , int typeOfAc){
+	ExAccount(String acName , String acNo , Day opeingDay , int typeOfAc){
 		//口座名義を代入
 		this.acName = acName;
 		//口座番号(6桁）を代入
@@ -50,7 +50,7 @@ public class ExAccount {
 	}
 	
 	//開設と同時に預金をするコンストラクタ
-	ExAccount(String acName , int acNo , long acBalance , Day opeingDay , int typeOfAc){
+	ExAccount(String acName , String acNo , long acBalance , Day opeingDay , int typeOfAc){
 		//口座名義を代入
 		this.acName = acName;
 		//口座番号(6桁）を代入
@@ -94,7 +94,7 @@ public class ExAccount {
 	 * 
 	 */
 	/* ====================================================================== */
-	public int getAcNo() {
+	public String getAcNo() {
 		//口座番号を取得
 		return acNo;
 	}
