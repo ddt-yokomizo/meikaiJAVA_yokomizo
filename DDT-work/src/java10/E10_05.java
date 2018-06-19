@@ -336,7 +336,7 @@ public class E10_05 {
 					// 口座名義
 					accountName,
 					// 口座番号を入力
-					inputRangeCheck((int) 0, 999999, INS_ACNO),
+					String.format("%06d", (inputRangeCheck((int) 0, 999999, INS_ACNO))),
 					// 預金残高を設定（１円以上のlong整数）
 					moreOrLessCheck((long) 1, sMORE, INS_ACBAL),
 					// 口座開設日を入力
@@ -356,7 +356,7 @@ public class E10_05 {
 					// 口座名義
 					accountName,
 					// 口座番号を入力
-					inputRangeCheck((int) 0, 999999, INS_ACNO),
+					String.format("%06d", (inputRangeCheck((int) 0, 999999, INS_ACNO))),
 					// 口座開設日を入力
 					new Day(inputNum(INS_DOMINO), inputNum(INS_MONTH),inputNum(INS_DATE)),
 					// 口座種別を入力する
