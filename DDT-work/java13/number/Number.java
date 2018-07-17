@@ -23,7 +23,7 @@ public class Number {
 	 * @note
 	 */
 	/* ====================================================================== */
-	static int inputNum(String outputMsg) {
+	public static int inputNum(String outputMsg) {
 		// 整数入力用の変数
 		int inputNum = 0;
 		// 引数の文字列をメッセージとして出力する
@@ -46,7 +46,7 @@ public class Number {
 	 * @note
 	 */
 	/* ====================================================================== */
-	static double getDouble(String outputMsg) {
+	public static double getDouble(String outputMsg) {
 		// 実数入力用の変数
 		double inputNum = 0.0;
 		// 引数の文字列をメッセージとして出力する
@@ -73,7 +73,7 @@ public class Number {
 	 * @note
 	 */
 	/* ====================================================================== */
-	static int inputRangeCheck(int fromNum, int toNum, String outputMsg) {
+	public static int inputRangeCheck(int fromNum, int toNum, String outputMsg) {
 		// チェック後に返却する範囲内の値
 		int checkedNum = 0;
 		do {
@@ -107,7 +107,7 @@ public class Number {
 	 * @note
 	 */
 	/* ====================================================================== */
-	static double inputRangeCheck(double fromNum, double toNum, String outputMsg) {
+	public static double inputRangeCheck(double fromNum, double toNum, String outputMsg) {
 		// チェック後に返却する範囲内の値
 		double checkedNum = 0.0;
 		do {
