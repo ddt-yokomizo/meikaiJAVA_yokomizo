@@ -45,7 +45,7 @@ public class Rectangle extends Shape{
 	/* ====================================================================== */
 	public String toString(){
 		//長方形の図形情報を文字列で返却
-		return "Rectangle(width:" + mWidth + "height:" + mHeight + ")";
+		return "Rectangle(width:" + mWidth + " / height:" + mHeight + ")";
 	}
 	
 	/* ====================================================================== */
