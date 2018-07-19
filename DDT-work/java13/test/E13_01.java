@@ -90,14 +90,19 @@ public class E13_01 {
 				//選択された図形が4（長方形）の場合
 				if(selectedShape == RECTANGLE){
 					//幅を入力（１以上）
-					width = moreOrLessCheck(sONE, sMORE, LENGTH);
+					width = moreOrLessCheck(sONE, sMORE, WIDTH);
 					//たかさを入力（１以上）
-					height = moreOrLessCheck(sONE, sMORE, LENGTH);
+					height = moreOrLessCheck(sONE, sMORE, HEIGHT);
 					
 					//createRectangleメソッドで長方形クラスのインスタンスを生成しコレクションへ格納
 					shapeArray.add(createRectangle(width, height));
 				}
-
+			}
+			
+			//格納した図形コレクションの要素数分周回して図形情報を出力
+			for(int i = 0 ; i < shapeArray.size() ; i++){
+				//printメソッドで図形情報を出力
+				shapeArray.get(i).print();
 			}
 			
 		} finally {
