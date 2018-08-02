@@ -25,4 +25,5 @@ public class Constants {
 	public final static int sDRAW = 0; //引き分けの定数
 	public final static int sJK_MIN = 0; //ジャンケンで出せる最小値
 	public final static int sJK_MAX = 2; //ジャンケンで出せる最大値
+	public final static int sPLAYER1ON1 = 2; //２人対戦用の定数
 }
