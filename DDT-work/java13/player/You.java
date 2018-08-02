@@ -15,7 +15,7 @@ import static number.Number.*;
  * @see Player
  */
 /* ====================================================================== */
-public abstract class You extends Player {
+public class You extends Player {
 	
 	/* ====フィールド==== */
 	
