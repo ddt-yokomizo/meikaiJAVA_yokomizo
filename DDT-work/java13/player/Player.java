@@ -1,6 +1,8 @@
 package player;
 import static number.Constants.*;
 
+import java.util.EmptyStackException;
+
 /* ====================================================================== */
 /**
  * @brief ジャンケンのプレイヤーを表す抽象クラス
@@ -134,8 +136,9 @@ public abstract class Player {
 		System.out.println(enemyPlayer.toString());
 		
 		//getResultメソッドを呼び出して勝敗結果を取得
-		judge = getResult(enemyPlayer);
+		//judge = getResult(enemyPlayer);
 		
+		judge = (getHand() - enemyPlayer.getHand() + 3) % 3;
 		//結果が引き分けの場合
 		if(judge == sDRAW){
 			System.out.println("引き分けです。");
