@@ -1,8 +1,6 @@
 package player;
 import static number.Constants.*;
 
-import java.util.EmptyStackException;
-
 /* ====================================================================== */
 /**
  * @brief ジャンケンのプレイヤーを表す抽象クラス
@@ -86,33 +84,6 @@ public abstract class Player {
 	
 	/* ====================================================================== */
 	/**
-	 * @brief ジャンケンの勝敗結果を返却するインスタンスメソッド
-	 *
-	 * @param enemyPlayer 対戦相手のプレイヤー変数
-	 *
-	 * @return 勝敗結果を表す０〜２の整数
-	 *
-	 * @note
-	 * 
-	 */
-	/* ====================================================================== */
-	private int getResult(Player enemyPlayer){
-		int myHand;		//自分のジャンケンの手
-		int enemyHand; //対戦相手のジャンケンの手
-		
-		//自分の手を取得
-		myHand = getHand();
-		//対戦相手の手を決定
-		enemyPlayer.setHand();
-		//対戦相手のジャンケンの手を取得
-		enemyHand = enemyPlayer.getHand(); 
-		
-		//getResultから対戦相手との勝敗結果を取得して返却
-		return getResult(myHand , enemyHand);
-	}
-	
-	/* ====================================================================== */
-	/**
 	 * @brief 
 	 *
 	 * @param enemyPlayer 対戦相手
@@ -135,9 +106,7 @@ public abstract class Player {
 		//toStringメソッドを呼び出して.対戦相手の出した手の情報の出力
 		System.out.println(enemyPlayer.toString());
 		
-		//getResultメソッドを呼び出して勝敗結果を取得
-		//judge = getResult(enemyPlayer);
-		
+		//勝敗を判定
 		judge = (getHand() - enemyPlayer.getHand() + 3) % 3;
 		//結果が引き分けの場合
 		if(judge == sDRAW){
@@ -146,12 +115,12 @@ public abstract class Player {
 		
 		//結果が負けの場合
 		if(judge == sLOSE){
-			System.out.println("あなたの負けです。");
+			System.out.println("負けです。");
 		}
 		
 		//結果が勝ちの場合
 		if(judge == sWIN){
-			System.out.println("あなたの勝ちです。");
+			System.out.println("勝ちです。");
 		}
 		
 	}
