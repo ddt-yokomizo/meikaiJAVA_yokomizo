@@ -56,6 +56,8 @@ public class E13_03 {
 				}
 				
 			}
+			
+			
 			//自分以外のインスタンスと総当たりで対戦
 			for (int i = 0 ; i < playerArray.size() ; i++){
 				for (int j = 0 ; j < playerArray.size() ; j++){
