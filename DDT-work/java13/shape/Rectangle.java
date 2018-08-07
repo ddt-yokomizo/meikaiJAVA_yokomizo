@@ -1,5 +1,6 @@
 package shape;
 
+import shapeInterface.Plane2D;
 
 /* ====================================================================== */
 /**
@@ -11,7 +12,7 @@ package shape;
  * @see Shape
  */
 /* ====================================================================== */
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Plane2D{
 	
 	/* ====フィールド==== */
 	private int mWidth; //長方形の幅
@@ -74,6 +75,23 @@ public class Rectangle extends Shape{
 		}
 	}
 	
+	/* ====================================================================== */
+	/**
+	 * @brief 図形の面積を返却する実装メソッド
+	 *
+	 * @param
+	 *
+	 * @return 面積
+	 *
+	 * @note
+	 * 
+	 */
+	/* ====================================================================== */
+	@Override
+	public int getArea() {
+		// 面積を返却
+		return mWidth * mHeight;
+	}
 	
 	
 }
