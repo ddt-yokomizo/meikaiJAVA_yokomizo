@@ -47,7 +47,7 @@ public class ComPlayer extends Player {
 	public void setHand() {
 		
 		// 出すジャンケンの手をランダムに決定（０・・グー/ １・・チョキ / ２・・パー ）
-		mHand = (int)(Math.random() * 10 ) % 10;
+		mHand = (int)(Math.random() * 3 ) % 3;
 
 	}
 
