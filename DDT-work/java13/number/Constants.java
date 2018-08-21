@@ -26,15 +26,15 @@ public class Constants {
 	public final static int sJK_MIN = 0; //ジャンケンで出せる最小値
 	public final static int sJK_MAX = 2; //ジャンケンで出せる最大値
 	public final static int sPLAYER1ON1 = 2; //２人対戦用の定数
-	final String SELECT_QUANTITY = "図形をいくつ作りますか？＞"; // 図形の個数選択時のメッセージ
-	final String SELECT_SHAPE_NUM = "番の図形の種類は？（1・・・点 / 2・・・水平直線 / 3・・・垂直直線 / 4・・・長方形 / 5・・・直角二等辺三角形）＞"; // 図形選択時のメッセージ
-	final String SELECT_ANGLE_DIRECTION = "直角の向きは？（1・・・右上 / 2・・・左上 / 3・・・右下 / 4・・・左下）＞"; // 直角二等辺三角形の直角方向選択時のメッセージ
-	final String WIDTH = "幅＞"; // 幅を入力するときのメッセージ
-	final String HEIGHT = "高さ＞"; // 高さを入力するときのメッセージ
-	final String LENGTH = "長さ＞"; // 長さを入力するときのメッセージ
-	final String SIDES = "二等辺三角形の辺の長さ＞"; // 二等辺三角形の辺の長さを入力するときのメッセージ
-	public static enum Message{
-		SELECT_QUANTITY("図形をいくつ作りますか？＞"),
-		
+	
+	
+	/* ====列挙型定数（図形タイプ）==== */
+	public static enum shapeType {
+		POINT, //図形（点）
+		HORZ_LINE,  //図形（水平線）
+		VIRT_LINE,//図形（垂直線）
+		RECTANGLE, //図形（長方形）	
+		ISOS_RIGHT_TRI, //図形（直角二等辺三角形）
+		PARALLELOGRAM //図形（平行四辺形）
 	}
 }
