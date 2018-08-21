@@ -67,13 +67,14 @@ public class Parallelogram extends Shape implements Plane2D {
 		
 		//インスタンスの高さの分だけ周回する
 		for (int i = 0 ; i < mHeight ; i++){
+			
+			//ずれスペース分空白を確保する
+			for(int k = 0 ; k < tmpSpace ; k++){
+				System.out.print("　");
+			}
+			
 			//インスタンスの幅の分だけ”＊”を描写する
 			for (int j = 0 ; j < mWidth ; j++){
-				
-				//ずれスペース分空白を確保する
-				for(int k = 0 ; k < tmpSpace ; k++){
-					System.out.print("　");
-				}
 				//アスタリスクを出力
 				System.out.print('＊');
 			}
