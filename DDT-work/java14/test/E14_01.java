@@ -59,11 +59,15 @@ public class E14_01 {
 			
 			//図形コレクションを宣言
 			ArrayList<Shape> shapeArray = new ArrayList<Shape>();
-			//２次元インターフェースコレクションを宣言
-			ArrayList<Plane2D> plane2DArray = new ArrayList<Plane2D>();	
+			//２次元インターフェース配列を宣言
+			Plane2D[] plane2DArray;
+			//ArrayList<Plane2D> plane2DArray = new ArrayList<Plane2D>();	
 			
 			//作成する図形の個数を選択
 			howMany = moreOrLessCheck(MIN_QUANTITY, sMORE, SELECT_QUANTITY);
+			
+			//２次元インターフェースの要素数を決定
+			plane2DArray = new Plane2D[howMany];
 			
 			//指定数図形を作成
 			for(int i = 0 ; i < howMany ; i++){
@@ -100,8 +104,14 @@ public class E14_01 {
 					//たかさを入力（１以上）
 					height = moreOrLessCheck(sONE, sMORE, HEIGHT);
 					
-					//createRectangleメソッドで長方形クラスのインスタンスを生成しコレクションへ格納
-					shapeArray.add(createRectangle(width, height));
+					//createRectangleメソッドで長方形クラスのインスタンスを生成
+					Shape tmpObj = createRectangle(width, height);
+					
+					//オブジェクトを図形コレクションへ格納
+					shapeArray.add(tmpObj);
+					
+					//図形コレクションと同じ２次元配列のインデックスにオブジェクトを格納
+					plane2DArray[i] = (Plane2D)tmpObj;
 				}
 				
 				//選択された図形が5（直角二等辺三角形）の場合
@@ -145,8 +155,14 @@ public class E14_01 {
 					//たかさを入力（１以上）
 					height = moreOrLessCheck(sONE, sMORE, HEIGHT);
 					
-					//createRectangleメソッドで平行四辺形クラスのインスタンスを生成しコレクションへ格納
-					shapeArray.add(createParallelogram(width, height));
+					//createParallelogramメソッドで平行四辺形クラスのインスタンスを生成
+					Shape tmpObj = createParallelogram(width, height);
+					
+					//オブジェクトを図形コレクションへ格納
+					shapeArray.add(tmpObj);
+					
+					//図形コレクションと同じ２次元配列のインデックスにオブジェクトを格納
+					plane2DArray[i] = (Plane2D)tmpObj;
 				}
 			}
 			
@@ -156,9 +172,8 @@ public class E14_01 {
 				shapeArray.get(i).print();
 				
 				//面積を求めるメソッドを持つオブジェクトは面積を表示
-				if (shapeArray.get(i) instanceof shape.Rectangle || shapeArray.get(i) instanceof shape.Parallelogram ){
-					System.out.println(shapeArray.get(i).);
-					System.out.println(plane2DArray.get(i).getArea());
+				if (shapeArray.get(i) instanceof Rectangle || shapeArray.get(i) instanceof Parallelogram ){
+					System.out.println("面積 : " + plane2DArray[i].getArea());
 				}
 			}
 			
