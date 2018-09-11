@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 import model.Skinnable;
 import pet.Pet;
+import shape.Point;
+import shape.Shape;
 
 import static model.Skinnable.*;
 public class E14_02 {
@@ -63,23 +65,120 @@ public class E14_02 {
 				switch (selectedPet) {
 				// ただのペットの場合
 				case NOMAL_PET:
-					petArray.add(e)
+					//createNomalPetメソッドから取得したインスタンスをコレクションに格納
+					petArray.add(createNomalPet());
 					break;
 				// ロボットペットの場合
 				case ROBOT_PET:
-					System.out.print("赤");
+					//createRobotPetメソッドから取得したインスタンスをコレクションに格納
+					petArray.add(createRobotPet());
 					break;
 				// 着せ替え可能なロボットペットの場合
 				case SKINNABLE_ROBOT_PET:
-					System.out.print("緑");
+					//createRobotPetメソッドから取得したインスタンスをコレクションに格納
+					petArray.add(createSkinnableRobotPet());
+					//着せ替えインターフェース配列へ格納
+					skinnableArray[i] = (Skinnable) petArray.get(i);
 					break;
 				default:
 					break;
 				}
+				
 			}
 			
+			System.out.println("順番にペットの情報を出力");
+			for(int i = 0 ; i < petArray.size() ; i++){
+				petArray.get(i).introduce();
+				if()
+			}
+			
+			
+			} finally {
+				// scannerをクローズ
+				sScanner.close();
+			}
+	}
 	
+	/* ====================================================================== */
+	/**
+	 * @brief ペットクラスのインスタンスを生成して返却するメソッド
+	 *
+	 * @param 
+	 *
+	 * @return 生成したインスタンス
+	 *
+	 * @note
+	 */
+	/* ====================================================================== */
+
+	public static Pet createNomalPet() {
+		String name; //ペットの名前
+		String masterName;//ご主人様の名前
+		
+		System.out.println("ペットの名前は？");
+		//ペットの名前を入力
+		name = sScanner.nextLine();
+		
+		System.out.println("主人の名前は？");
+		//ご主人様の名前を入力
+		masterName = sScanner.nextLine();
+		
+		// 作成したペットインスタンスを返却
+		return new Pet(name, masterName);
+	}
+	/* ====================================================================== */
+	/**
+	 * @brief ロボットペットクラスのインスタンスを生成して返却するメソッド
+	 *
+	 * @param 
+	 *
+	 * @return 生成したインスタンス
+	 *
+	 * @note
+	 */
+	/* ====================================================================== */
+
+	public static Pet createRobotPet() {
+		String name; //ロボットペットの名前
+		String masterName;//ご主人様の名前
+		
+		System.out.println("ロボットペットの名前は？");
+		//ペットの名前を入力
+		name = sScanner.nextLine();
+		
+		System.out.println("主人の名前は？");
+		//ご主人様の名前を入力
+		masterName = sScanner.nextLine();
+		
+		// 作成したペットインスタンスを返却
+		return new Pet(name, masterName);
+	}
 	
+	/* ====================================================================== */
+	/**
+	 * @brief 着せ替え可能なロボットペットクラスのインスタンスを生成して返却するメソッド
+	 *
+	 * @param 
+	 *
+	 * @return 生成したインスタンス
+	 *
+	 * @note
+	 */
+	/* ====================================================================== */
 
-
+	public static Pet createSkinnableRobotPet() {
+		String name; //着せ替え可能なロボットペットの名前
+		String masterName;//ご主人様の名前
+		
+		System.out.println("着せ替え可能なロボットペットの名前は？");
+		//ペットの名前を入力
+		name = sScanner.nextLine();
+		
+		System.out.println("主人の名前は？");
+		//ご主人様の名前を入力
+		masterName = sScanner.nextLine();
+		
+		// 作成したペットインスタンスを返却
+		return new Pet(name, masterName);
+	}
 }
