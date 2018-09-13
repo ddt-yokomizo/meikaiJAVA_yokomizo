@@ -1,5 +1,8 @@
 package number;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 import static number.Constants.*;
 
@@ -11,6 +14,27 @@ import static number.Constants.*;
 public class Number {
 	// 標準入力ストリーム
 	public static Scanner sScanner = new Scanner(System.in);
+	public static BufferedReader sBr = new BufferedReader(new InputStreamReader(System.in));
+	
+	/* ====================================================================== */
+	/**
+	 * @brief String型の文字列を入力して返却するメソッド
+	 *
+	 * @param String outputMsg 入力前に出力するメッセージ
+	 *
+	 * @return 
+	 * @throws IOException 
+	 *
+	 * @note
+	 */
+	/* ====================================================================== */
+	public static String inputString(String outputMsg) throws IOException {
+		// 引数の文字列をメッセージとして出力する
+		System.out.print(outputMsg);
+
+		// 入力した文字列を返却する
+		return sBr.readLine();
+	}
 
 	/* ====================================================================== */
 	/**
