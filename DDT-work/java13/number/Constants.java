@@ -27,6 +27,13 @@ public class Constants {
 	public final static int sJK_MAX = 2; //ジャンケンで出せる最大値
 	public final static int sPLAYER1ON1 = 2; //２人対戦用の定数
 	
+	/* ====ペット関連==== */
+	public final static String INPUT_PET_NAME = "ぺっとの名前は？"; //ペット名入力時のメッセージ
+	public final static String INPUT_ROBOT_PET_NAME = "ロボットぺっとの名前は？"; //ペット名入力時のメッセージ
+	public final static String INPUT_SUKINNABLE_ROBOT_PET_NAME = "着せ替え可能ロボットぺっとの名前は？"; //ペット名入力時のメッセージ
+	public final static String MASTER_NAME = "ご主人様の名前は？"; //ご主人様の名入力時のメッセージ
+	public final static String INPUT_SKIN_COLOR = "スキンカラーは？（0・・・黒 /　1・・・赤 /　2・・・緑 /　3・・・青 /　4・・・ヒョウ柄 /　）"; //スキンカラー入力時のメッセージ
+
 	
 	/* ====列挙型定数（図形タイプ）==== */
 	public static enum shapeType {
