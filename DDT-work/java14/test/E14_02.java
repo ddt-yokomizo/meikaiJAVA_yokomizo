@@ -7,13 +7,15 @@ package test;
 import static number.Constants.*;
 import static number.Number.*;
 
+
+import java.io.IOException;
+
 import java.util.ArrayList;
 
 import model.Skinnable;
 import pet.Pet;
-import shape.Point;
-import shape.Shape;
-
+import pet.RobotPet;
+import pet.SkinnableRobotPet;
 import static model.Skinnable.*;
 public class E14_02 {
 
@@ -30,7 +32,7 @@ public class E14_02 {
 	 */
 	/* ====================================================================== */
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		try {
 			final String SELECT_QUANTITY = "ペットをいくつ作りますか？＞"; // ペット数選択時のメッセージ
 			final String SELECT_PET_TYPE = "番のペットの種類は？（1・・・ただのペット / 2・・・ロボットペット / 3・・・着せ替え可能なロボットペット)"; // ペット選択時のメッセージ
@@ -41,7 +43,6 @@ public class E14_02 {
 			final int ROBOT_PET= 2; //ロボットペット
 			final int SKINNABLE_ROBOT_PET= 3; //着せ替え可能なロボットペット
 			int howMany; //作成するペットの個数
-			int selectedSkin; //選択したスキンの種類
 			int selectedPet; //選択したペットの種類
 			
 			//ペットコレクションを宣言
@@ -88,8 +89,17 @@ public class E14_02 {
 			
 			System.out.println("順番にペットの情報を出力");
 			for(int i = 0 ; i < petArray.size() ; i++){
+				//introduceメソッドで自己紹介を行う
 				petArray.get(i).introduce();
-				if()
+				
+				//着せ替え可能なロボットペットのオブジェクトの場合はスキンの変更を行う
+				if (petArray.get(i) instanceof SkinnableRobotPet){
+					//changeSkinメソッドでスキンカラーの変更を行う
+					skinnableArray[i].changeSkin();
+					
+					//もう一度introduceメソッドで自己紹介を行い、スキンカラーが変更されたことを確認
+					petArray.get(i).introduce();
+				}
 			}
 			
 			
@@ -106,22 +116,21 @@ public class E14_02 {
 	 * @param 
 	 *
 	 * @return 生成したインスタンス
+	 * @throws IOException 
 	 *
 	 * @note
 	 */
 	/* ====================================================================== */
 
-	public static Pet createNomalPet() {
+	public static Pet createNomalPet() throws IOException {
 		String name; //ペットの名前
 		String masterName;//ご主人様の名前
 		
-		System.out.println("ペットの名前は？");
-		//ペットの名前を入力
-		name = sScanner.nextLine();
+		//ペットの名前
+		name = inputString(INPUT_PET_NAME);
 		
-		System.out.println("主人の名前は？");
 		//ご主人様の名前を入力
-		masterName = sScanner.nextLine();
+		masterName = inputString(MASTER_NAME);
 		
 		// 作成したペットインスタンスを返却
 		return new Pet(name, masterName);
@@ -133,25 +142,25 @@ public class E14_02 {
 	 * @param 
 	 *
 	 * @return 生成したインスタンス
+	 * @throws IOException 
 	 *
 	 * @note
 	 */
 	/* ====================================================================== */
 
-	public static Pet createRobotPet() {
+	public static Pet createRobotPet() throws IOException {
 		String name; //ロボットペットの名前
 		String masterName;//ご主人様の名前
 		
-		System.out.println("ロボットペットの名前は？");
-		//ペットの名前を入力
-		name = sScanner.nextLine();
+		//ロボットペットの名前
+		name = inputString(INPUT_ROBOT_PET_NAME);
 		
-		System.out.println("主人の名前は？");
 		//ご主人様の名前を入力
-		masterName = sScanner.nextLine();
+		masterName = inputString(MASTER_NAME);
+		
 		
 		// 作成したペットインスタンスを返却
-		return new Pet(name, masterName);
+		return new RobotPet(name, masterName);
 	}
 	
 	/* ====================================================================== */
@@ -161,24 +170,27 @@ public class E14_02 {
 	 * @param 
 	 *
 	 * @return 生成したインスタンス
+	 * @throws IOException 
 	 *
 	 * @note
 	 */
 	/* ====================================================================== */
 
-	public static Pet createSkinnableRobotPet() {
+	public static Pet createSkinnableRobotPet() throws IOException {
 		String name; //着せ替え可能なロボットペットの名前
 		String masterName;//ご主人様の名前
+		int skinColor;//スキンカラー
 		
-		System.out.println("着せ替え可能なロボットペットの名前は？");
-		//ペットの名前を入力
-		name = sScanner.nextLine();
+		//着せ替え可能なロボットペットの名前
+		name = inputString(INPUT_SUKINNABLE_ROBOT_PET_NAME);
 		
-		System.out.println("主人の名前は？");
 		//ご主人様の名前を入力
-		masterName = sScanner.nextLine();
+		masterName = inputString(MASTER_NAME);
+		
+		//スキンの色を入力
+		skinColor = inputRangeCheck(sSKIN_MIN, sSKIN_MAX, INPUT_SKIN_COLOR);
 		
 		// 作成したペットインスタンスを返却
-		return new Pet(name, masterName);
+		return new SkinnableRobotPet(name, masterName , skinColor);
 	}
 }
