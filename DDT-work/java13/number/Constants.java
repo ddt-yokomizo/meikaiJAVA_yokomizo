@@ -44,4 +44,25 @@ public class Constants {
 		ISOS_RIGHT_TRI, //図形（直角二等辺三角形）
 		PARALLELOGRAM //図形（平行四辺形）
 	}
+	
+	/* ====列挙型定数（操作種類）==== */
+	public static enum manipulateType {
+		PLAY(1), //再生
+		STOP(2),  //停止
+		SLOW_PLAY(3),//スロー再生
+		EXIT(4); //終了	
+		
+		//コンストラクタ
+		manipulateType(int manipulateNum){
+			mManipulate = manipulateNum;
+		}
+		
+		//列挙子を返却する
+		public int getManipulate(){
+			return mManipulate;
+		}
+		
+		//列挙子
+		private final int mManipulate;
+	}
 }
