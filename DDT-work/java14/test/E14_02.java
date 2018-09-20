@@ -11,7 +11,6 @@ import static number.Number.*;
 import java.io.IOException;
 
 import java.util.ArrayList;
-
 import model.Skinnable;
 import pet.Pet;
 import pet.RobotPet;
@@ -36,7 +35,6 @@ public class E14_02 {
 		try {
 			final String SELECT_QUANTITY = "ペットをいくつ作りますか？＞"; // ペット数選択時のメッセージ
 			final String SELECT_PET_TYPE = "番のペットの種類は？（1・・・ただのペット / 2・・・ロボットペット / 3・・・着せ替え可能なロボットペット)"; // ペット選択時のメッセージ
-			final String SELECT_SKIN = "スキンは？（0・・・黒 / 1・・・赤 / 2・・・緑 / 3・・・青 / 4・・・ヒョウ柄）＞"; // スキン選択時のメッセージ
 			final int SELECT_TYPE_MAX = 3; //選択できるペットの種類番号の最大値
 			final int SELECT_TYPE_MIN = 1; //選択できるペットの種類番号の最小値
 			final int NOMAL_PET= 1; //ただのペット
@@ -102,8 +100,10 @@ public class E14_02 {
 				}
 			}
 			
-			
-			} finally {
+			}catch (IOException e) {
+			// IOException が発生したとき、メッセージを出力
+				System.out.println("IOExceptionが発生");
+		} finally {
 				// scannerをクローズ
 				sScanner.close();
 			}
@@ -123,18 +123,27 @@ public class E14_02 {
 	/* ====================================================================== */
 
 	public static Pet createNomalPet() throws IOException {
-		String name; //ペットの名前
-		String masterName;//ご主人様の名前
-		
-		//ペットの名前
-		name = inputString(INPUT_PET_NAME);
-		
-		//ご主人様の名前を入力
-		masterName = inputString(MASTER_NAME);
-		
-		// 作成したペットインスタンスを返却
-		return new Pet(name, masterName);
+		try {
+			String name; //ペットの名前
+			String masterName;//ご主人様の名前
+			
+			//ペットの名前
+			name = inputString(INPUT_PET_NAME);
+			
+			//ご主人様の名前を入力
+			masterName = inputString(MASTER_NAME);
+			
+			// 作成したペットインスタンスを返却
+			return new Pet(name, masterName);
+			
+		} catch (IOException e) {
+			// IOException が発生したとき、メッセージを出力
+			System.out.println("名前を入力する際にエラーが発生。nullを返却します。（IOException）");
+			//nullを返却
+			return null;
+		}
 	}
+	
 	/* ====================================================================== */
 	/**
 	 * @brief ロボットペットクラスのインスタンスを生成して返却するメソッド
@@ -149,18 +158,25 @@ public class E14_02 {
 	/* ====================================================================== */
 
 	public static Pet createRobotPet() throws IOException {
-		String name; //ロボットペットの名前
-		String masterName;//ご主人様の名前
-		
-		//ロボットペットの名前
-		name = inputString(INPUT_ROBOT_PET_NAME);
-		
-		//ご主人様の名前を入力
-		masterName = inputString(MASTER_NAME);
-		
-		
-		// 作成したペットインスタンスを返却
-		return new RobotPet(name, masterName);
+		try {
+			String name; //ロボットペットの名前
+			String masterName;//ご主人様の名前
+			
+			//ロボットペットの名前
+			name = inputString(INPUT_ROBOT_PET_NAME);
+			
+			//ご主人様の名前を入力
+			masterName = inputString(MASTER_NAME);
+			
+			// 作成したペットインスタンスを返却
+			return new RobotPet(name, masterName);
+			
+		} catch (IOException e) {
+			// IOException が発生したとき、メッセージを出力
+			System.out.println("名前を入力する際にエラーが発生。nullを返却します。（IOException）");
+			//nullを返却
+			return null;
+		}
 	}
 	
 	/* ====================================================================== */
@@ -177,20 +193,30 @@ public class E14_02 {
 	/* ====================================================================== */
 
 	public static Pet createSkinnableRobotPet() throws IOException {
-		String name; //着せ替え可能なロボットペットの名前
-		String masterName;//ご主人様の名前
-		int skinColor;//スキンカラー
 		
-		//着せ替え可能なロボットペットの名前
-		name = inputString(INPUT_SUKINNABLE_ROBOT_PET_NAME);
-		
-		//ご主人様の名前を入力
-		masterName = inputString(MASTER_NAME);
-		
-		//スキンの色を入力
-		skinColor = inputRangeCheck(sSKIN_MIN, sSKIN_MAX, INPUT_SKIN_COLOR);
-		
-		// 作成したペットインスタンスを返却
-		return new SkinnableRobotPet(name, masterName , skinColor);
+		try {
+			String name; //着せ替え可能なロボットペットの名前
+			String masterName;//ご主人様の名前
+			int skinColor;//スキンカラー
+			
+			//着せ替え可能なロボットペットの名前
+			name = inputString(INPUT_SUKINNABLE_ROBOT_PET_NAME);
+			
+			//ご主人様の名前を入力
+			masterName = inputString(MASTER_NAME);
+			
+			//スキンの色を入力
+			skinColor = inputRangeCheck(sSKIN_MIN, sSKIN_MAX, INPUT_SKIN_COLOR);
+			
+			// 作成したペットインスタンスを返却
+			return new SkinnableRobotPet(name, masterName , skinColor);
+			
+		} catch (IOException e) {
+			// IOException が発生したとき、メッセージを出力
+			System.out.println("名前を入力する際にエラーが発生。nullを返却します。（IOException）");
+			//nullを返却
+			return null;
+		}
+
 	}
 }
