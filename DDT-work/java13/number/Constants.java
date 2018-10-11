@@ -56,13 +56,14 @@ public class Constants {
 		manipulateType(int manipulateNum){
 			mManipulate = manipulateNum;
 		}
+		//列挙子
+		private final int mManipulate;
 		
 		//列挙子を返却する
 		public int getManipulate(){
 			return mManipulate;
 		}
 		
-		//列挙子
-		private final int mManipulate;
+
 	}
 }
