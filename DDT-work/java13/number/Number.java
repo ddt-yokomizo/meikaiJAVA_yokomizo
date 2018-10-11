@@ -35,6 +35,24 @@ public class Number {
 		// 入力した文字列を返却する
 		return sBr.readLine();
 	}
+	/* ====================================================================== */
+	/**
+	 * @brief String型の文字列を入力して返却するメソッド(Scanner型)
+	 *
+	 * @param String outputMsg 入力前に出力するメッセージ
+	 *
+	 * @return 
+	 *
+	 * @note
+	 */
+	/* ====================================================================== */
+	public static String scannerInputString(String outputMsg){
+		// 引数の文字列をメッセージとして出力する
+		System.out.print(outputMsg);
+
+		// 入力した文字列を返却する
+		return sScanner.nextLine();
+	}
 
 	/* ====================================================================== */
 	/**
