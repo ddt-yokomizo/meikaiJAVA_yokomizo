@@ -25,7 +25,6 @@ import static number.Number.*;
 				final String INSERT_STRING = "文字列を入力してください。＞"; // 文字列を入力する際に表示するメッセージ
 				int stringLength; //文字列の長さ
 				String inputString = null; //文字列
-				char tmpchar; //作業用文字
 				
 				//文字列を入力
 				inputString = scannerInputString(INSERT_STRING);
