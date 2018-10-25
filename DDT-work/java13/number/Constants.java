@@ -26,6 +26,7 @@ public class Constants {
 	public final static int sJK_MIN = 0; //ジャンケンで出せる最小値
 	public final static int sJK_MAX = 2; //ジャンケンで出せる最大値
 	public final static int sPLAYER1ON1 = 2; //２人対戦用の定数
+	public final static int sPLAYER3 = 3; //3人対戦用の定数
 	
 	/* ====ペット関連==== */
 	public final static String INPUT_PET_NAME = "ぺっとの名前は？"; //ペット名入力時のメッセージ
