@@ -33,7 +33,6 @@ public class E15_05 {
 	public static void main(String[] args) {
 		try {
 			final String PLAYER_NAME = "プレーヤー名を入力＞"; // プレーヤー名を入力する際に表示するメッセージ
-			final String PLAYERS_STRING = "プレイヤー数＞"; // プレーヤー数を入力する際に表示するメッセージ
 			int numOfPlayers; //プレイヤー数
 
 			//プレイヤーコレクションを宣言
