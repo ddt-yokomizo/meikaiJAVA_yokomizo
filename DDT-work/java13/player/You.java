@@ -23,7 +23,15 @@ public class You extends Player {
 	
 	/* ====コンストラクタ==== */
 	public You(){
-		//なにもしない
+		//プレーヤ名をSet
+		this("名無し");
+	}
+	/* ====コンストラクタ==== */
+	public You(String name){
+		//プレーヤ名をSet
+		super(name);
+		//プレーヤ名を表示
+		System.out.println("あなた : " + getName());
 	}
 	
 	/* ====================================================================== */
@@ -41,7 +49,7 @@ public class You extends Player {
 	@Override
 	public String toString() {
 		//直線に関する情報を文字列で返却
-		return "あなたの出した手(" + sHANDS[getHand()] + ")";
+		return getName() + "の出した手(" + sHANDS[getHand()] + ")";
 	}
 	
 	/* ====================================================================== */

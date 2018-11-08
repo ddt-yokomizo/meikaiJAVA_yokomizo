@@ -1,18 +1,23 @@
 package stringBuild;
-/**
- * 3人でジャンケンを行うプログラムを作成せよ。
- * コンピュータ２人、人間を１人とし、演習１３−３で作成したプレーヤークラスを利用すること
- * 
- */
-
 import static number.Number.*;
-import static number.Constants.*;
+
 import java.util.ArrayList;
+
+import player.ComPlayer;
 import player.Player;
+import player.You;
+
+import static number.Constants.*;
+	/**
+	 * 
+	 * @author masahiro
+	 *　３人でお行うジャンケンプログラムを作成せよ。
+	 *ぷれーや３人のうち、コンピュータ２人として人間を１人とすること。
+	 *また、演習１３−３で作成したプレーヤクラスを利用すること。
+	 *
+	 */
 
 public class E15_05 {
-
-
 	/* ====================================================================== */
 	/**
 	 * @brief メインメソッド
@@ -21,99 +26,40 @@ public class E15_05 {
 	 *
 	 * @return なし
 	 *
-	 * @note
+	 * @note 
 	 */
 	/* ====================================================================== */
 
 	public static void main(String[] args) {
 		try {
-			final String SELECT_PLAYER_TYPE = "ジャンケンするプレイヤーを決定します（　１・・・人間 / ２・・・COM　）＞"; // プレーヤータイプ選択時のメッセージ
-			final int SELECT_TYPE_MAX = 2; //選択できるプレイヤータイプの最大値
-			final int SELECT_TYPE_MIN = 1; //選択できるプレイヤータイプの最大値
-			final int HUMAN_PLAYER = 1; //プレイヤータイプ（人間）
-			final int COM_PLAYER = 2; //プレイヤータイプ（コンピュータ）
-			int playerType; //プレイヤータイプ
-			int numOfPlayers; //プレイヤー人数
-			
+			final String PLAYER_NAME = "プレーヤー名を入力＞"; // プレーヤー名を入力する際に表示するメッセージ
+			final String PLAYERS_STRING = "プレイヤー数＞"; // プレーヤー数を入力する際に表示するメッセージ
+			int numOfPlayers; //プレイヤー数
+
 			//プレイヤーコレクションを宣言
-			ArrayList<Player> playerArray = new ArrayList<Player>();
+			ArrayList<Player> players = new ArrayList<Player>();
 			
-			//２人対戦に決定
-			numOfPlayers = sPLAYER1ON1;
+			//プレイヤー数を３に決定
+			numOfPlayers = sPLAYER3;
 			
-			//対戦人数分ループしてコレクションにPlayer変数を格納
-			for(int playerIndex = 0 ; playerIndex < numOfPlayers ; playerIndex++){		
-				//プレーヤータイプを決定
-				playerType = inputRangeCheck(SELECT_TYPE_MIN, SELECT_TYPE_MAX, SELECT_PLAYER_TYPE);
+			System.out.println("\nあなたの操作するプレイヤーを作成します。");
+			//プレイヤーオブジェクトを生成して格納
+			players.add(new You(scannerInputString(PLAYER_NAME)));
+			
+			
+			//コンピュータのプレイヤを生成してコレクションに格納（操作できるプレイヤーを１人とし、それ以外はCOMとする）
+			for(int i = 0 ; i < (numOfPlayers - 1) ; i++){
 				
-				//選択されたプレイヤーが人間の場合
-				if(playerType == HUMAN_PLAYER){
-					//人間プレイヤー変数をコレクションへ格納
-					playerArray.add(createHumPlayer());
-				}
-				
-				//選択されたプレイヤーがコンピュータの場合
-				if(playerType == COM_PLAYER){
-					//コンピュータプレイヤー変数をコレクションへ格納
-					playerArray.add(createComPlayer());
-				}
-				
+				System.out.printf("\nコンピュータプレイヤー%dを作成します。",i);
+				//コンピュータのプレイヤを生成してコレクションに格納
+				players.add(new ComPlayer(scannerInputString(PLAYER_NAME)));
 			}
-			
-			
-			//自分以外のインスタンスと総当たりで対戦
-			for (int i = 0 ; i < playerArray.size() ; i++){
-				for (int j = 0 ; j < playerArray.size() ; j++){
-					//自分以外のインスタンスと対戦
-					if(i != j){
-						System.out.println((i + 1) + "番目のプレイヤーが" + (j + 1) + "番目のプレイヤーと対戦");
-						//対戦
-						playerArray.get(i).play(playerArray.get(j));
-					}
-				}
-			}
+			//生成したオブジェクトでジャンケンを行う
+			Player.playOn(players);
 			
 		} finally {
 			// scannerをクローズ
 			sScanner.close();
 		}
-	}
-	
-	/* ====================================================================== */
-	/**
-	 * @brief 人間プレイヤークラスのインスタンスを生成して返却するメソッド
-	 * 
-	 * @author masahiro
-	 *
-	 * @param 
-	 *
-	 * @return 生成した人間プレイヤークラスのインスタンス変数
-	 *
-	 * @note
-	 */
-	/* ====================================================================== */
-
-	public static Player createHumPlayer() {
-		// 作成した人間プレイヤーインスタンスを返却
-		return new player.You();
-	}
-	
-	/* ====================================================================== */
-	/**
-	 * @brief コンピュータプレイヤークラスのインスタンスを生成して返却するメソッド
-	 *
-	 * @author masahiro
-	 *
-	 * @param
-	 *
-	 * @return  生成したコンピュータプレイヤークラスのインスタンス変数
-	 *
-	 * @note
-	 */
-	/* ====================================================================== */
-
-	public static Player createComPlayer() {
-		// 作成したコンピュータプレイヤーインスタンスを返却
-		return new player.ComPlayer();
 	}
 }
