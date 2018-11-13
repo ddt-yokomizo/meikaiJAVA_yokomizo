@@ -14,6 +14,8 @@ public class Constants {
 	/* ====定数==== */
 	public final static int sMORE = 1; //「〜以上」を表すクラス定数
 	public final static int sLESS = 0; //「〜以下」を表すクラス定数
+	public final static double MORE_D = 1.0; //「〜以上」を表すクラス定数
+	public final static double LESS_D = 0.0; //「〜以下」を表すクラス定数
 	public final static int sZERO = 0; //定数0
 	public final static int sONE = 1; //定数1
 	public final static int YES = 1; //YESの定数
