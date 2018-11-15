@@ -14,8 +14,12 @@ public class Constants {
 	/* ====定数==== */
 	public final static int sMORE = 1; //「〜以上」を表すクラス定数
 	public final static int sLESS = 0; //「〜以下」を表すクラス定数
+	public final static double MORE_D = 1.0; //「〜以上」を表すクラス定数
+	public final static double LESS_D = 0.0; //「〜以下」を表すクラス定数
 	public final static int sZERO = 0; //定数0
 	public final static int sONE = 1; //定数1
+	public final static int YES = 1; //YESの定数
+	public final static int NO = 0; //NOの定数
 	
 	/* ====ジャンケン関連==== */
 	public final static String[] sHANDS = {"グー","チョキ","パー"}; //ジャンケンの手(定数)
@@ -23,9 +27,33 @@ public class Constants {
 	public final static int sWIN = 2; //勝利の定数
 	public final static int sLOSE = 1; //負けの定数
 	public final static int sDRAW = 0; //引き分けの定数
+	public final static int RESIDUAL = 1; //残留の定数
+	public final static int ELIMINATED = 0; //敗退の定数
 	public final static int sJK_MIN = 0; //ジャンケンで出せる最小値
 	public final static int sJK_MAX = 2; //ジャンケンで出せる最大値
 	public final static int sPLAYER1ON1 = 2; //２人対戦用の定数
+	public final static int sPLAYER3 = 3; //3人対戦用の定数
+	
+	/* ====列挙型定数（ジャンケンの手）==== */
+	public static enum BATTLE_HANDS {
+		GOO(0), //ぐー
+		CHOKI(1),  //ちょき
+		PAA(2); //ぱー
+		
+		//コンストラクタ
+		BATTLE_HANDS(int hands){
+			mHands = hands;
+		}
+		//列挙子
+		private final int mHands;
+		
+		//列挙子を返却する
+		public int getEnumHand(){
+			return mHands;
+		}
+		
+
+	}
 	
 	/* ====ペット関連==== */
 	public final static String INPUT_PET_NAME = "ぺっとの名前は？"; //ペット名入力時のメッセージ
