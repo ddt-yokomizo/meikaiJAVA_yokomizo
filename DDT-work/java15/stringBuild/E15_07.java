@@ -14,6 +14,7 @@ public class E15_07 {
 			// 引数の文字列をDouble型に変換して合計する
 			sum += Double.parseDouble(str);
 		}
+		//合計値を表示
 		System.out.println("合計は" + sum + "です");
 
 	}
