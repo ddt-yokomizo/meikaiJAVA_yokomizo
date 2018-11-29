@@ -13,8 +13,8 @@ public class E15_07 {
 		for(String str : args){
 			//引数の文字列をDouble型に変換して合計する
 			sum += Double.parseDouble(str);
-			System.out.println("合計は" + sum + "です");
 		}
+			System.out.println("合計は" + sum + "です");
 		
 	}
 
