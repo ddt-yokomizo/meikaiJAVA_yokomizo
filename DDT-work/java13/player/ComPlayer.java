@@ -10,7 +10,15 @@ public class ComPlayer extends Player {
 	
 	/* ====コンストラクタ==== */
 	public ComPlayer(){
-		//なにもしない
+		//プレーヤ名をSet
+		this("名無し");
+	}
+	/* ====コンストラクタ==== */
+	public ComPlayer(String name){
+		//プレーヤ名をSet
+		super(name);
+		//プレーヤ名を表示
+		System.out.println("COM : " + getName());
 	}
 	
 	/* ====================================================================== */
@@ -28,7 +36,7 @@ public class ComPlayer extends Player {
 	@Override
 	public String toString() {
 		//直線に関する情報を文字列で返却
-		return "コンピュータの出した手(" + sHANDS[getHand()] + ")";
+		return getName() + "の出した手(" + sHANDS[getHand()] + ")";
 	}
 	
 	/* ====================================================================== */
