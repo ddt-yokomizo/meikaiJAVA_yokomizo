@@ -4,6 +4,8 @@ package stringBuild;
  * 
  */
 
+
+=======
 import static number.Constants.*;
 import static number.Number.*;
 
@@ -23,6 +25,17 @@ public class E15_06 {
 
 	public static void main(String[] args) {
 		try {
+			final int SISYA_GONYU_DIGIT = 3; //小数第3位で四捨五入するための定数
+			double radius; //半径
+			
+			//コマンドライン引数の文字列をDouble型へ変換し半径を取得
+			radius = Double.parseDouble(args[0]);
+			
+			//getCircleメソッドで円の面積を取得して表示(小数第3位で四捨五入する)
+			System.out.println("面積" + sisyaGonyu(getCircle(radius),SISYA_GONYU_DIGIT));
+			
+			//getCircleメソッドで円周取得して表示(小数第3位で四捨五入する)
+			System.out.println("円周" + sisyaGonyu(getCircumFerence(radius),SISYA_GONYU_DIGIT));
 			final String INPUT_RADIUS = "半径を入力＞"; // 円の半径を入力する際に表示するメッセージ
 			final String ONEMORE = "もう一度行う?（０・・no / 1・・yes）＞"; // もう一度行う場合のメッセージ
 			double radius; //半径
