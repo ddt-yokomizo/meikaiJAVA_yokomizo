@@ -14,9 +14,9 @@ import java.util.Scanner;
 //非検査例外を処理するため、RuntimeExceptionから派生する
 class RangeError extends RuntimeException{
 	//コンストラクタ
-	public RangeError(int n) {
+	public RangeError(String message) {
 		//Throwableクラス(全ての例外クラスの親玉)のコンストラクタを呼び出す
-		super("範囲外の値：" + n);
+		super(message);
 	}
 }
 
@@ -25,7 +25,7 @@ class ResultRangeError extends RangeError{
 	//コンストラクタ
 	public ResultRangeError(int n) {
 		//スーパクラスRangeErrorのコンストラクタを呼び出す
-		super(n);
+		super("合計値が範囲外の値：" + n);
 	}
 }
 
@@ -34,7 +34,7 @@ class ParameterRangeError extends RangeError{
 	//コンストラクタ
 	public ParameterRangeError(int n) {
 		//スーパクラスRangeErrorのコンストラクタを呼び出す
-		super(n);
+		super("引数が範囲外の値：" + n);
 	}
 }
 
@@ -79,6 +79,9 @@ public class E16_02 {
 		} catch (RuntimeException e) {
 			// 例外RuntimeExceptionを処理してメッセージを出力
 			System.out.println(e.toString());
+		} finally {
+			//Scannerをクローズ
+			stdIn.close();
 		}
 
 	}
