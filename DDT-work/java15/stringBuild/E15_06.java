@@ -5,7 +5,6 @@ package stringBuild;
  */
 
 
-=======
 import static number.Constants.*;
 import static number.Number.*;
 
@@ -38,7 +37,6 @@ public class E15_06 {
 			System.out.println("円周" + sisyaGonyu(getCircumFerence(radius),SISYA_GONYU_DIGIT));
 			final String INPUT_RADIUS = "半径を入力＞"; // 円の半径を入力する際に表示するメッセージ
 			final String ONEMORE = "もう一度行う?（０・・no / 1・・yes）＞"; // もう一度行う場合のメッセージ
-			double radius; //半径
 			int reStart = 0; //もう一度行うか判定する変数
 			
 			do {
